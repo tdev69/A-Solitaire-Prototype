@@ -1,0 +1,334 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &538972054055398741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 538972054055398728}
+  - component: {fileID: 538972054055398731}
+  - component: {fileID: 7217880200778752414}
+  - component: {fileID: 538972054055398730}
+  - component: {fileID: 6973770912604951927}
+  - component: {fileID: -1287433501509971315}
+  - component: {fileID: 8513185534714535935}
+  - component: {fileID: 5308679834829980029}
+  - component: {fileID: 2038069588483898913}
+  m_Layer: 0
+  m_Name: Card
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &538972054055398728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538972054055398741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &538972054055398731
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538972054055398741}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1963838894192998602, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.42, y: 0.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &7217880200778752414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538972054055398741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f2b41b24e4f5b40a22a8f0c4b67a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteMap: {fileID: 11400000, guid: e6569846ad8da9d40b13b1d895dbc361, type: 2}
+--- !u!114 &538972054055398730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538972054055398741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac25f83348f744459a941a1f0c3157e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSprites:
+  - {fileID: -2514820413673640461, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 971024342053533617, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 1640595266707070121, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 2019815073623805528, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -1703812080475682258, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -1672043813339739842, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 2887720373133291592, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 7650796175290697662, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 753019023718002013, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 753019023718002013, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -6536579500214205457, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 880976105667807341, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -579249898599023583, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -4148303396302949269, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -4203433506095509898, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 938883298820821729, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -5204289327249358076, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 6924901463621378054, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -8850693936751873361, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -2744337822709936960, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -7750179789846876621, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 389691512500908577, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 7417150831511244555, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -1175673755048513552, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -8251720694729908691, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 6284667751309231632, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 4961619472168652400, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: -3760630615861493005, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 1537886920081501509, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 1208360767769378865, guid: 67bf6752a0d8ba44db8adace1f3b2d50, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  allCards: {fileID: 11400000, guid: 37436312b2fe85b4daad2d7633f067cb, type: 2}
+  levelCards: {fileID: 11400000, guid: 63c117ceb56b9bc42803ff68bb7b3341, type: 2}
+  countCards: {fileID: 11400000, guid: 8e42b564cdf62f540ab21fd5372f7c29, type: 2}
+  passCardInLevel: {fileID: 0}
+  cardInfo: {fileID: 0}
+  showBackAtStart: 1
+--- !u!61 &6973770912604951927
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538972054055398741}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.42, y: 0.6}
+    newSize: {x: 0.42, y: 0.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.42, y: 0.6}
+  m_EdgeRadius: 0
+--- !u!114 &-1287433501509971315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538972054055398741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50556a342d1d8c4690f7bfe7efd18a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsToListen:
+  - Event: {fileID: 11400000, guid: 9453ea3709de3994fa606651228938ac, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 538972054055398730}
+          m_TargetAssemblyTypeName: CardManager, Assembly-CSharp
+          m_MethodName: RemoveCardFromAvailableCards
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Event: {fileID: 11400000, guid: 0333b1d03f8339540ad6a26f1ff4054f, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 538972054055398730}
+          m_TargetAssemblyTypeName: CardManager, Assembly-CSharp
+          m_MethodName: GetCardInfoListener
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 538972054055398730}
+          m_TargetAssemblyTypeName: CardManager, Assembly-CSharp
+          m_MethodName: SetInLevelCards
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Event: {fileID: 11400000, guid: d3c547c2d86f4d34ca3f7ad6d254f417, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5308679834829980029}
+          m_TargetAssemblyTypeName: CardStateManager, Assembly-CSharp
+          m_MethodName: SetCardState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2038069588483898913}
+          m_TargetAssemblyTypeName: FlipInPlace, Assembly-CSharp
+          m_MethodName: FlipCardOnFace
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &8513185534714535935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538972054055398741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5188747613334df48aa203f98fff9b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5308679834829980029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538972054055398741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a092a09ce1b19c84aae26f6b538b1404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currCardState: {fileID: 0}
+  checkCardCanMove: {fileID: 11400000, guid: 6f5f3bf52cb58794b9c55c4cc09d1834, type: 2}
+  flipToOpenDeck: {fileID: 11400000, guid: aaef24b0c9677af40895fa3cc25c764f, type: 2}
+  jumpToOpenDeck: {fileID: 11400000, guid: 76fdd7def143e7546b62d67040606050, type: 2}
+  shakeInPlace: {fileID: 11400000, guid: 4c69c9774d2b9134d96ada14213e6dfe, type: 2}
+  doNothing: {fileID: 11400000, guid: 86b599cf83efb6d4080bcd7c7f125aa2, type: 2}
+--- !u!114 &2038069588483898913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538972054055398741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f9b00a32e0e344a9598eed923eddb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipTime: 0.25

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 743ecfb8b8578364a9f636e65952999a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - checkContactEvent: {fileID: 11400000, guid: d3c547c2d86f4d34ca3f7ad6d254f417, type: 2}
+  - countCards: {fileID: 11400000, guid: 8e42b564cdf62f540ab21fd5372f7c29, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
