@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d466a86544b06054fb2a5a5b54346d29, type: 3}
   m_Name: LessThanObjective
   m_EditorClassIdentifier: 
+  cardsInClosedDeckAtStart: 20
   cardsInLevel: {fileID: 11400000, guid: 63c117ceb56b9bc42803ff68bb7b3341, type: 2}
-  maxInLevelCardsRemaining: 0
+  maxInLevelCardsRemaining: 4

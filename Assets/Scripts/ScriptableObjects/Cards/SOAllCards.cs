@@ -37,6 +37,7 @@ public class SOAllCards : ScriptableObject
     {
         SOCardInfo aCard = this.availableCards[indexOfCard];
         this.availableCards.RemoveAt(indexOfCard);
+        Debug.Log("index of cards before exception = " + indexOfCard);
         return aCard;
     }
 
@@ -60,7 +61,7 @@ public class SOAllCards : ScriptableObject
 
             if(cs == aCardInfo.Item1 && cv == aCardInfo.Item2)
             {
-                return this.availableCards.IndexOf(aCard);
+                return availableCards.IndexOf(aCard);
             }
         }
 
@@ -91,11 +92,11 @@ public class SOAllCards : ScriptableObject
     {
         if(this.availableCards.Count == 0)
         {
-            this.PopulateAllCardsList();
+            this.CreateAllCards();
         }
 
-        int index = Random.Range(0, this.availableCards.Count);
-        return this.GetCardFromAvailableCards(index);
+        //int index = Random.Range(0, this.availableCards.Count);
+        return this.GetCardFromAvailableCards(0);
     }
 
     /// <summary>
@@ -134,6 +135,8 @@ public class SOAllCards : ScriptableObject
             cardInfo.SetCardInformation(cards);
             this.availableCards.Add(cardInfo);
         }
+
+        this.RandomiseAvailableCards();
     }
 
     private void OnEnable()
@@ -146,5 +149,16 @@ public class SOAllCards : ScriptableObject
     private void OnDisable()
     {
         this.availableCards.Clear();
+    }
+
+    private void RandomiseAvailableCards()
+    {
+        for(int i = 0; i < this.availableCards.Count; i++)
+        {
+            SOCardInfo firstCard = this.availableCards[i];
+            int randomIndex = Random.Range(i, this.availableCards.Count);
+            this.availableCards[i] = this.availableCards[randomIndex];
+            this.availableCards[randomIndex] = firstCard;
+        }
     }
 }
