@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToOpenDeck: 1
   openDeckPosition: {x: 1, y: -4, z: 0}
-  allCards: {fileID: 11400000, guid: 37436312b2fe85b4daad2d7633f067cb, type: 2}
-  jumpPower: 6
-  rotateTo: {x: 0, y: 0, z: 720}
-  shakeInPlaceState: {fileID: 11400000, guid: 4c69c9774d2b9134d96ada14213e6dfe, type: 2}
-  checkContact: {fileID: 11400000, guid: d3c547c2d86f4d34ca3f7ad6d254f417, type: 2}
-  AddToCombo: {fileID: 11400000, guid: 9880e92b3cb8b004cb92a1c9788f8b5a, type: 2}
-  ResetCombo: {fileID: 11400000, guid: a2f5fb78a7eb82249880733e7effd0e9, type: 2}
+  allCards: {fileID: 0}
+  jumpPower: 3
+  rotateTo: {x: 0, y: 0, z: 1080}
+  shakeInPlaceState: {fileID: 0}
+  checkContact: {fileID: 0}
+  AddToCombo: {fileID: 0}
+  ResetCombo: {fileID: 0}

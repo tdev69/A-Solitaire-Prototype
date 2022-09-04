@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ClosedDeckManager : MonoBehaviour
 {
+    [SerializeField] GameObject cardFlipper = null;
     [SerializeField] GameObject cardTemplate = null; 
     [SerializeField] private Vector3 closedDeckPosition = new Vector3(-1, -4, 0); 
     private ClosedDeckUI cdui = null;  
@@ -12,28 +13,39 @@ public class ClosedDeckManager : MonoBehaviour
 
     public void CreateCardsInClosedDeckAtStart()
     {
-        this.CreateCardsInClosedDeck(this.currObjective.GetCardsInClosedDeckAtStart());
+        CreateCardsInClosedDeck(currObjective.GetCardsInClosedDeckAtStart());
     }
 
     public void CreateCardsInClosedDeckInGame(int aNumber)
     {
-        this.CreateCardsInClosedDeck(aNumber);
+        CreateCardsInClosedDeck(aNumber);
+    }
+
+    public GameObject GetCardFlipper()
+    {
+        return cardFlipper;
+    }
+
+    public GameObject GetCardOnTop()
+    {
+        Transform[] closedDeckCards = transform.GetComponentsInChildren<Transform>();
+        return closedDeckCards[closedDeckCards.Length - 1].gameObject;
     }
 
     private void Awake()
     {
-        this.gm = GetComponentInParent<GameMaster>();
-        this.currObjective = gm.GetCurrentObjective();
-        this.cdui = GetComponent<ClosedDeckUI>();
+        gm = GetComponentInParent<GameMaster>();
+        currObjective = gm.GetCurrentObjective();
+        cdui = GetComponent<ClosedDeckUI>();
     }
 
     private void CreateCardsInClosedDeck(int numberToCreate)
     {
         for(int x = 0; x < numberToCreate; x++)
         {
-            GameObject card = Instantiate(original: cardTemplate, parent: this.gameObject.transform);
+            GameObject card = Instantiate(original: cardTemplate, parent: gameObject.transform);
         }
 
-        this.cdui.UpdateDisplay();
+        cdui.UpdateDisplay();
     }
 }

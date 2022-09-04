@@ -14,17 +14,17 @@ public class FlipInPlace : MonoBehaviour
 
     public void FlipCardOnFace()
     {
-        if(this.isFlipped == false &&
-            this.overlapDetection.IsSpriteOnTop() == true &&
-            this.cm.GetIsInClosedDeck() == false
+        if(isFlipped == false &&
+            overlapDetection.IsSpriteOnTop() == true &&
+            cm.GetIsInClosedDeck() == false
             )
         {
-            this.isFlipped = true;
-            CardSymbol cs = this.cm.GetCardSymbol();
-            CardValue cv = this.cm.GetCardValue();
+            isFlipped = true;
+            CardSymbol cs = cm.GetCardSymbol();
+            CardValue cv = cm.GetCardValue();
             Sequence flipInPlaceSeq = DOTween.Sequence();
-            Tween shrink = this.transform.DOScaleX(0, this.flipTime/2).OnComplete(() => displayManager.ShowCardFace((cs, cv)));
-            Tween expand = this.transform.DOScaleX(this.originalScale.x, this.flipTime/2);
+            Tween shrink = transform.DOScaleX(0, flipTime/2).OnComplete(() => displayManager.ShowCardFace((cs, cv)));
+            Tween expand = transform.DOScaleX(originalScale.x, flipTime/2);
             flipInPlaceSeq.Append(shrink);
             flipInPlaceSeq.Append(expand);
         }
@@ -32,19 +32,19 @@ public class FlipInPlace : MonoBehaviour
 
     public void SetIsFlipped(bool isCardFlip)
     {
-        this.isFlipped = isCardFlip;
+        isFlipped = isCardFlip;
     }
 
     private void Start()
     {
-        this.SetIsFlipped(!cm.GetShowBackAtStart());
+        SetIsFlipped(!cm.GetShowBackAtStart());
     }
 
     private void Awake()
     {
-        this.displayManager = GetComponent<DisplayManager>();
-        this.overlapDetection = GetComponent<OverlapDetection>();
-        this.cm = GetComponent<CardManager>();
-        this.originalScale = this.transform.localScale;
+        displayManager = GetComponent<DisplayManager>();
+        overlapDetection = GetComponent<OverlapDetection>();
+        cm = GetComponent<CardManager>();
+        originalScale = transform.localScale;
     }
 }

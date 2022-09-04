@@ -20,12 +20,12 @@ public class SOAllCards : ScriptableObject
     // Index 0 will serve as the top of the deck.
     public void AddCardToClosedDeck((CardSymbol, CardValue) aCard)
     {
-        this.closedDeckCards.Insert(0, aCard);
+        closedDeckCards.Insert(0, aCard);
     }
 
     public List<(CardSymbol, CardValue)> GetCompleteClosedDeckList()
     {
-        return this.closedDeckCards;
+        return closedDeckCards;
     }
 
     /// <summary>
@@ -35,15 +35,15 @@ public class SOAllCards : ScriptableObject
     /// <returns></returns>
     public SOCardInfo GetCardFromAvailableCards(int indexOfCard)
     {
-        SOCardInfo aCard = this.availableCards[indexOfCard];
-        this.availableCards.RemoveAt(indexOfCard);
+        SOCardInfo aCard = availableCards[indexOfCard];
+        availableCards.RemoveAt(indexOfCard);
         Debug.Log("index of cards before exception = " + indexOfCard);
         return aCard;
     }
 
     public (CardSymbol, CardValue) GetCurrentOpenDeckCard()
     {
-        return this.openDeckCards[this.openDeckCards.Count - 1];
+        return openDeckCards[openDeckCards.Count - 1];
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class SOAllCards : ScriptableObject
     /// <returns></returns>
     public int GetIndexFromAvailableCards((CardSymbol, CardValue) aCardInfo)
     {
-        foreach(SOCardInfo aCard in this.availableCards)
+        foreach(SOCardInfo aCard in availableCards)
         {
             CardSymbol cs = aCard.GetCardSymbol();
             CardValue cv = aCard.GetCardValue();
@@ -70,17 +70,17 @@ public class SOAllCards : ScriptableObject
 
     public int GetNumberOfCardsInClosedDeck()
     {
-        return this.closedDeckCards.Count;
+        return closedDeckCards.Count;
     }
 
     public int GetNumberOfCardsInLevel()
     {
-        return this.cardsInLevel.GetNumberOfCardsInLevel();
+        return cardsInLevel.GetNumberOfCardsInLevel();
     }
 
     public int GetNumberOfCardsInOpenDeck()
     {
-        return this.openDeckCards.Count;
+        return openDeckCards.Count;
     }
 
     /// <summary>
@@ -90,13 +90,13 @@ public class SOAllCards : ScriptableObject
     /// <returns></returns>
     public SOCardInfo GetRandomCard()
     {
-        if(this.availableCards.Count == 0)
+        if(availableCards.Count == 0)
         {
-            this.CreateAllCards();
+            CreateAllCards();
         }
 
-        //int index = Random.Range(0, this.availableCards.Count);
-        return this.GetCardFromAvailableCards(0);
+        //int index = Random.Range(0, availableCards.Count);
+        return GetCardFromAvailableCards(0);
     }
 
     /// <summary>
@@ -106,9 +106,9 @@ public class SOAllCards : ScriptableObject
     /// <returns></returns>
     public (CardSymbol, CardValue) MoveFromClosedDeckToOpenDeck()
     {
-        (CardSymbol, CardValue) topCard = this.closedDeckCards[0];
-        this.closedDeckCards.RemoveAt(0);
-        this.PutCardInOpenDeck(topCard);
+        (CardSymbol, CardValue) topCard = closedDeckCards[0];
+        closedDeckCards.RemoveAt(0);
+        PutCardInOpenDeck(topCard);
         return topCard;
     }
     private void PopulateAllCardsList()
@@ -117,14 +117,14 @@ public class SOAllCards : ScriptableObject
         {
             foreach(CardValue cv in CardValue.GetValues(typeof(CardValue)))
             {
-                this.allCards.Add((cs, cv));
+                allCards.Add((cs, cv));
             }
         }
     }
 
     public void PutCardInOpenDeck((CardSymbol, CardValue) aCard)
     {
-        this.openDeckCards.Add(aCard);
+        openDeckCards.Add(aCard);
     }
 
     private void CreateAllCards()
@@ -133,32 +133,32 @@ public class SOAllCards : ScriptableObject
         {
             SOCardInfo cardInfo = (SOCardInfo)ScriptableObject.CreateInstance<SOCardInfo>();
             cardInfo.SetCardInformation(cards);
-            this.availableCards.Add(cardInfo);
+            availableCards.Add(cardInfo);
         }
 
-        this.RandomiseAvailableCards();
+        RandomiseAvailableCards();
     }
 
     private void OnEnable()
     {
-        this.availableCards.Clear();
-        this.PopulateAllCardsList();
-        this.CreateAllCards(); //Creates all the CardInfo objects that can be passed to Card Manager
+        availableCards.Clear();
+        PopulateAllCardsList();
+        CreateAllCards(); //Creates all the CardInfo objects that can be passed to Card Manager
     }
 
     private void OnDisable()
     {
-        this.availableCards.Clear();
+        availableCards.Clear();
     }
 
     private void RandomiseAvailableCards()
     {
-        for(int i = 0; i < this.availableCards.Count; i++)
+        for(int i = 0; i < availableCards.Count; i++)
         {
-            SOCardInfo firstCard = this.availableCards[i];
-            int randomIndex = Random.Range(i, this.availableCards.Count);
-            this.availableCards[i] = this.availableCards[randomIndex];
-            this.availableCards[randomIndex] = firstCard;
+            SOCardInfo firstCard = availableCards[i];
+            int randomIndex = Random.Range(i, availableCards.Count);
+            availableCards[i] = availableCards[randomIndex];
+            availableCards[randomIndex] = firstCard;
         }
     }
 }

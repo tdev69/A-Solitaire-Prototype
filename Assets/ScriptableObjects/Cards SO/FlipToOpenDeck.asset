@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743ecfb8b8578364a9f636e65952999a, type: 3}
   m_Name: FlipToOpenDeck
   m_EditorClassIdentifier: 
-  timeToOpenDeck: 10
+  timeToOpenDeck: 1
   openDeckPosition: {x: 1, y: -4, z: 0}
+  moveDuration: 0.5
   checkContactEvent: {fileID: 11400000, guid: d3c547c2d86f4d34ca3f7ad6d254f417, type: 2}
   resetCombo: {fileID: 11400000, guid: a2f5fb78a7eb82249880733e7effd0e9, type: 2}
-  moveDuration: 0.5
+  flipperTracker: {fileID: 11400000, guid: 587d7a7899c29f34fb4da158210e4a69, type: 2}

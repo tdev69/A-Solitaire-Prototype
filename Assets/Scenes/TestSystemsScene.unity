@@ -283,6 +283,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9e7f4403e8e52468241ec014b3eca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2046048664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2046048665}
+  - component: {fileID: 2046048666}
+  m_Layer: 0
+  m_Name: CardFromDeckFlipper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2046048665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046048664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2095247649}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2046048666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046048664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e061c0ff0ff2743a0a4914480d2b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationTime: 0.5
+  flipperTracker: {fileID: 11400000, guid: 587d7a7899c29f34fb4da158210e4a69, type: 2}
+--- !u!4 &2095247649 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 726390955851620910, guid: ef0d5b6bcc2fc4c4ca5e888497bd0788, type: 3}
+  m_PrefabInstance: {fileID: 726390954691923928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &726390954691923928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -426,6 +476,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 8036795087891622045, guid: ef0d5b6bcc2fc4c4ca5e888497bd0788, type: 3}
+      propertyPath: cardFlipper
+      value: 
+      objectReference: {fileID: 2046048664}
     - target: {fileID: 8977518867962993795, guid: ef0d5b6bcc2fc4c4ca5e888497bd0788, type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 2

@@ -314,11 +314,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currCardState: {fileID: 0}
-  checkCardCanMove: {fileID: 11400000, guid: 6f5f3bf52cb58794b9c55c4cc09d1834, type: 2}
-  flipToOpenDeck: {fileID: 11400000, guid: aaef24b0c9677af40895fa3cc25c764f, type: 2}
-  jumpToOpenDeck: {fileID: 11400000, guid: 76fdd7def143e7546b62d67040606050, type: 2}
-  shakeInPlace: {fileID: 11400000, guid: 4c69c9774d2b9134d96ada14213e6dfe, type: 2}
-  doNothing: {fileID: 11400000, guid: 86b599cf83efb6d4080bcd7c7f125aa2, type: 2}
+  checkCardCanMove: {fileID: 11400000, guid: 706a4125f9c573147aa4e485cedbcfa5, type: 2}
+  flipToOpenDeck: {fileID: 11400000, guid: fd5b1b0ae9e24a0419ce5a57f9502d5c, type: 2}
+  jumpToOpenDeck: {fileID: 11400000, guid: 6ee513c8b7c01e541836a65d437d2988, type: 2}
+  shakeInPlace: {fileID: 11400000, guid: 4870ad44280073840bcc4164bf85f727, type: 2}
+  doNothing: {fileID: 11400000, guid: c24046b42ac35494697fe5965040c5bd, type: 2}
 --- !u!114 &2038069588483898913
 MonoBehaviour:
   m_ObjectHideFlags: 0
