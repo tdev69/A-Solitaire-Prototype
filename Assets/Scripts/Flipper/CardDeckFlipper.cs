@@ -15,7 +15,12 @@ public class CardDeckFlipper : MonoBehaviour
     /// </summary>
     public void FlipToTheRight()
     {
-        transform.DORotate(new Vector3(0, 180, 0), rotationTime).OnComplete(() => ResetRotation());
+        CardManager flippingCardManager = GetComponentInChildren<CardManager>();
+        Sequence rotation = DOTween.Sequence();
+        Tween firstHalf = transform.DORotate(new Vector3(0, -90, 0), rotationTime / 2).OnComplete(() => flippingCardManager.MoveToOpenDeck());
+        Tween secondHalf = transform.DORotate(new Vector3(0, -180, 0), rotationTime / 2).OnComplete(() => ResetRotation());
+        rotation.Append(firstHalf);
+        rotation.Append(secondHalf);
     }
 
     private void Awake()
