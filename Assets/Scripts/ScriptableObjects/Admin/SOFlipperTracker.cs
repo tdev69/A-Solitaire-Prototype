@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +8,6 @@ public class SOFlipperTracker : ScriptableObject
 {
     private GameObject closedToOpenDeckFlipper = null;
     private CardDeckFlipper cardDeckFlipper = null;
-    private Tween flipTween = null;
 
     /// <summary>
     /// Flips the first card of the closed deck to the top of the open deck
@@ -26,12 +24,6 @@ public class SOFlipperTracker : ScriptableObject
     public void AttachToCloseDeckFlipper(GameObject cardToFlip)
     {
         cardToFlip.transform.SetParent(closedToOpenDeckFlipper.transform);
-    }
-
-
-    public Tween GetFlipTween()
-    {
-        return flipTween;
     }
 
 
@@ -52,15 +44,5 @@ public class SOFlipperTracker : ScriptableObject
     public void SetClosedToOpenDeckFlipper(GameObject aGameObject)
     {
         closedToOpenDeckFlipper = aGameObject;
-    }
-
-
-    /// <summary>
-    /// tracks the tween of the flipper
-    /// </summary>
-    /// <param name="aFlipPercentage">The tween of the flipper</param>
-    public void SetFlipTween(Tween aFlipTween)
-    {
-        flipTween = aFlipTween;
     }
 }

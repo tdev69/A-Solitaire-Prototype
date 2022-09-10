@@ -7,7 +7,6 @@ public class CardDeckFlipper : MonoBehaviour
 {
     [SerializeField] private float rotationTime = 0.5f;
     [SerializeField] private SOFlipperTracker flipperTracker = null;
-    private Tween flipTween = null;
 
 
     /// <summary>
@@ -16,8 +15,7 @@ public class CardDeckFlipper : MonoBehaviour
     /// </summary>
     public void FlipToTheRight()
     {
-        flipTween = transform.DORotate(new Vector3(0, 180, 0), rotationTime).OnComplete(() => ResetRotation());
-        flipperTracker.SetFlipTween(flipTween);
+        transform.DORotate(new Vector3(0, 180, 0), rotationTime).OnComplete(() => ResetRotation());
     }
 
     private void Awake()
@@ -35,4 +33,5 @@ public class CardDeckFlipper : MonoBehaviour
         transform.DetachChildren();
         transform.rotation = Quaternion.Euler(Vector3.zero);
     }
+
 }

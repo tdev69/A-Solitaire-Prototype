@@ -15,7 +15,6 @@ public class SOFlipToOpenDeck : SOCardState
     {
         flipperTracker.AttachToCloseDeckFlipper(aCardGameObject);
         flipperTracker.FlipFromClosedDeckToOpen();
-        aCardManager.SetFlipTweener(flipperTracker.GetFlipTween());
         // float thirdMoveTime = this.moveDuration/3;
         // float twoThirdMoveTime = thirdMoveTime * 2;  
         // Sequence flipSequence = DOTween.Sequence().OnComplete(() => SendMessage(this.checkContactEvent));
@@ -30,7 +29,7 @@ public class SOFlipToOpenDeck : SOCardState
         // flipSequence.Append(move);
         // flipSequence.Join(cardSizeSequence);
 
-        SendMessage(resetCombo);
+        this.SendMessage(this.resetCombo);
     }
 
 
