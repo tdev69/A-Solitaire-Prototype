@@ -7,6 +7,7 @@ public class CardDeckFlipper : MonoBehaviour
 {
     [SerializeField] private float rotationTime = 0.5f;
     [SerializeField] private SOFlipperTracker flipperTracker = null;
+    [SerializeField] private SOGameEvent checkContactEvent = null;
 
 
     /// <summary>
@@ -16,7 +17,7 @@ public class CardDeckFlipper : MonoBehaviour
     public void FlipToTheRight()
     {
         CardManager flippingCardManager = GetComponentInChildren<CardManager>();
-        Sequence rotation = DOTween.Sequence();
+        Sequence rotation = DOTween.Sequence().OnComplete(() => checkContactEvent.Raise());
         Tween firstHalf = transform.DORotate(new Vector3(0, -90, 0), rotationTime / 2).OnComplete(() => flippingCardManager.MoveToOpenDeck());
         Tween secondHalf = transform.DORotate(new Vector3(0, -180, 0), rotationTime / 2).OnComplete(() => ResetRotation());
         rotation.Append(firstHalf);

@@ -328,6 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationTime: 0.5
   flipperTracker: {fileID: 11400000, guid: 587d7a7899c29f34fb4da158210e4a69, type: 2}
+  checkContactEvent: {fileID: 11400000, guid: d3c547c2d86f4d34ca3f7ad6d254f417, type: 2}
 --- !u!4 &2095247649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 726390955851620910, guid: ef0d5b6bcc2fc4c4ca5e888497bd0788, type: 3}
