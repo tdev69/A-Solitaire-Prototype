@@ -20,86 +20,97 @@ public class CardManager : MonoBehaviour
     [SerializeField] private bool showBackAtStart = true;
     
     private bool isInClosedDeck = false;
+    private bool isFlipped = false;
     private BoxCollider2D bc2d = null;
     private CardStateManager csm = null;
     private DisplayManager displayManager = null;
     private FlipInPlace fip = null;
+    private Tween flipTweener = null;
     
 
     public void GetCardInfoListener()
     {
-        this.GetCardInfo();
-        this.SetSpriteAtStart();
+        GetCardInfo();
+        SetSpriteAtStart();
     }
 
     public CardSymbol GetCardSymbol()
     {
-        return this.cardInfo.GetCardSymbol();
+        return cardInfo.GetCardSymbol();
     }
 
     public CardValue GetCardValue()
     {
-        return this.cardInfo.GetCardValue();
+        return cardInfo.GetCardValue();
     }
 
     public bool GetIsInClosedDeck()
     {
-        return this.isInClosedDeck;
+        return isInClosedDeck;
     }
 
     public bool GetShowBackAtStart()
     {
-        return this.showBackAtStart;
+        return showBackAtStart;
     }
 
     public void MoveToOpenDeck()
     {
-        this.bc2d.enabled = false;
-        CardSymbol thisCardSymbol = this.GetCardSymbol();
-        CardValue thisCardValue = this.GetCardValue();
-        this.displayManager.SetOrderInLayer(this.allCards.GetNumberOfCardsInOpenDeck());
+        bc2d.enabled = false;
+        CardSymbol thisCardSymbol = GetCardSymbol();
+        CardValue thisCardValue = GetCardValue();
+        displayManager.SetOrderInLayer(allCards.GetNumberOfCardsInOpenDeck());
 
-        if(this.GetIsInClosedDeck() == true)
+        if(GetIsInClosedDeck() == true)
         {
-            this.SetIsInClosedDeck(false);
-            this.displayManager.ShowCardFace((thisCardSymbol, thisCardValue));
-            this.allCards.MoveFromClosedDeckToOpenDeck();
+            SetIsInClosedDeck(false);
+            displayManager.ShowCardFace((thisCardSymbol, thisCardValue));
+            allCards.MoveFromClosedDeckToOpenDeck();
         }
 
         else
         {
-            this.allCards.PutCardInOpenDeck((thisCardSymbol, thisCardValue));
-            this.levelCards.RemoveCardFromInLevel(this.cardInfo);
+            allCards.PutCardInOpenDeck((thisCardSymbol, thisCardValue));
+            levelCards.RemoveCardFromInLevel(cardInfo);
         }
 
-        this.fip.SetIsFlipped(true);
-        this.countCards.Raise();
+        fip.SetIsFlipped(true);
+        countCards.Raise();
     }
 
     public void RemoveCardFromAvailableCards()
     {
-        if(this.cardInfo != null)
+        if(cardInfo != null)
         {
             (CardSymbol, CardValue) aCard;
-            aCard.Item1 = this.GetCardSymbol();
-            aCard.Item2 = this.GetCardValue();
-            int index = this.allCards.GetIndexFromAvailableCards(aCard);
-            this.allCards.GetCardFromAvailableCards(index); //Removes already set card from list of available cards
-            this.SetSpriteAtStart();
+            aCard.Item1 = GetCardSymbol();
+            aCard.Item2 = GetCardValue();
+            int index = allCards.GetIndexFromAvailableCards(aCard);
+            allCards.GetCardFromAvailableCards(index); //Removes already set card from list of available cards
+            SetSpriteAtStart();
         }
+    }
+
+    /// <summary>
+    /// Set the Tween to follow to change the card sprite at the right time
+    /// </summary>
+    /// <param name="aTween">Tween</param>
+    public void SetFlipTweener(Tween aTween)
+    {
+        flipTweener = aTween;
     }
 
     public void SetInLevelCards()
     {
-        if(this.GetIsInClosedDeck() == false)
+        if(GetIsInClosedDeck() == false)
         {
-            this.levelCards.SetCardInLevel(this.cardInfo);
+            levelCards.SetCardInLevel(cardInfo);
         }
     }
 
     public void SetIsInClosedDeck(bool aBool)
     {
-        this.isInClosedDeck = aBool;
+        isInClosedDeck = aBool;
     }
 
     /// <summary>
@@ -109,57 +120,68 @@ public class CardManager : MonoBehaviour
     /// <param name="aPriority"></param>
     public void SetLayerPriority(int aPriority)
     {
-        this.displayManager.SetOrderInLayer(aPriority);
+        displayManager.SetOrderInLayer(aPriority);
     }
 
     public void TriggerClickBehaviour()
     {
-        this.csm.TriggerClickBehaviour(this.transform.gameObject);
+        csm.TriggerClickBehaviour(transform.gameObject);
     }
 
     private void GetCardInfo()
     {
-        if (this.cardInfo == null)
+        if (cardInfo == null)
         {
-            this.cardInfo = this.allCards.GetRandomCard();
+            cardInfo = allCards.GetRandomCard();
         }
     }
 
     private void SetSpriteAtStart() 
     {
-        if(this.showBackAtStart)
+        if(showBackAtStart)
         {
-            this.displayManager.ShowCardBack();
+            displayManager.ShowCardBack();
         }
 
         else 
         {
-            CardSymbol thisCardSymbol = this.cardInfo.GetCardSymbol();
-            CardValue thisCardValue = this.cardInfo.GetCardValue();
-            this.displayManager.ShowCardFace((thisCardSymbol, thisCardValue));
+            CardSymbol thisCardSymbol = cardInfo.GetCardSymbol();
+            CardValue thisCardValue = cardInfo.GetCardValue();
+            displayManager.ShowCardFace((thisCardSymbol, thisCardValue));
         }
     }
 
     private void SetInClosedDeck()
     {
-        if(this.transform.parent.name == "ClosedDeck")
+        if(transform.parent.name == "ClosedDeck")
         {
-            this.SetIsInClosedDeck(true);
-            this.GetCardInfo();
-            CardSymbol thisCardSymbol = this.cardInfo.GetCardSymbol();
-            CardValue thisCardValue = this.cardInfo.GetCardValue();
-            this.allCards.AddCardToClosedDeck((thisCardSymbol, thisCardValue));
-            this.displayManager.SetOrderInLayer(this.allCards.GetNumberOfCardsInClosedDeck()); //ensures new cards are on top and order of cards is respected
-            this.SetSpriteAtStart();
+            SetIsInClosedDeck(true);
+            GetCardInfo();
+            CardSymbol thisCardSymbol = cardInfo.GetCardSymbol();
+            CardValue thisCardValue = cardInfo.GetCardValue();
+            allCards.AddCardToClosedDeck((thisCardSymbol, thisCardValue));
+            displayManager.SetOrderInLayer(allCards.GetNumberOfCardsInClosedDeck()); //ensures new cards are on top and order of cards is respected
+            SetSpriteAtStart();
         }
     }
 
     private void Awake()
     {
-        this.displayManager = GetComponent<DisplayManager>();
-        this.SetInClosedDeck();
-        this.bc2d = GetComponent<BoxCollider2D>();
-        this.csm = GetComponent<CardStateManager>();
-        this.fip = GetComponent<FlipInPlace>();
+        displayManager = GetComponent<DisplayManager>();
+        SetInClosedDeck();
+        bc2d = GetComponent<BoxCollider2D>();
+        csm = GetComponent<CardStateManager>();
+        fip = GetComponent<FlipInPlace>();
+    }
+
+    private void Update()
+    {
+        if (flipTweener != null 
+            && isFlipped == false
+            && flipTweener.ElapsedPercentage() >= 0.5f)
+        {
+            isFlipped = true;
+            MoveToOpenDeck();
+        }
     }
 }
